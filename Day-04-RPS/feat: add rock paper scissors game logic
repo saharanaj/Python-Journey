@@ -1,0 +1,52 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+game_choice = [rock, paper, scissors]
+#1 Get the user input
+user_choice = int(input("What do you choose Type 0 for rock, 1 for paper, 2 for scissors: "))
+#2 Safet Check
+if user_choice>=3 or user_choice<0:
+    print("you choose invalid number you loose")
+else:
+    print(game_choice[user_choice])
+
+#generate computer choice
+computer_choice = random.randint(0,2)
+print("Computer chose: ",computer_choice)
+print(game_choice[computer_choice])
+
+#3 game logic
+if user_choice==0 and computer_choice==2:
+    print("you win")
+elif user_choice==2 and computer_choice==0:
+    print("you lose")
+elif computer_choice>user_choice:
+    print("you loose")
+elif computer_choice<user_choice:
+    print("you win")
+elif computer_choice==computer_choice:
+    print ("its a draw")
